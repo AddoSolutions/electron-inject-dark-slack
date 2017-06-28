@@ -2,6 +2,8 @@
 
 This is a fork of electron-inject it adds a dark theme to slack for people that want a dark theme.
 
+Dark CSS for Slack created by https://github.com/Bigsy/dark-slack-theme (Modified to work with Desktop Slack).
+
 *electron-inject-slack-css* uses electron-inject's javascript injection to load a custom css file into slack.
 
 

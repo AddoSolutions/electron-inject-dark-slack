@@ -20,7 +20,7 @@ setup(
     license="GPLv3",
     keywords=["electron", "inject", "slack", "dark theme"],
     url="https://github.com/KemonoServal/electron-inject-dark-slack",
-    #download_url="https://github.com/KemonoServal/electron-inject-dark-slack/tarball/v0.3",
+    download_url="https://github.com/KemonoServal/electron-inject-dark-slack/tarball/v0.3",
     #python setup.py register -r https://testpypi.python.org/pypi
     long_description=read("README.rst") if os.path.isfile("README.rst") else read("README.md"),
     install_requires=['websocket-client','requests'],
