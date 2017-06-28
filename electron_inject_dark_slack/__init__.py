@@ -23,7 +23,9 @@ SCRIPT_HOTKEYS_F12_DEVTOOLS_F5_REFRESH = """document.addEventListener("keydown",
 });"""
 
 SCRIPT_ENABLE_DARK_THEME_SLACK = """
-	var cssPath = '""" + string.replace(string.replace(__file__, '\\', '/'), '__init__.py', 'dark.css') + """';
+	var cssPath = '""" + string.replace(string.replace(__file__, '\\', '/'), '__init__.pyc', 'dark.css') + """';
+	console.log('""" + string.replace(__file__, '\\', '/') + """');
+	console.log(cssPath);
 	var css = require("fs").readFileSync(cssPath,'utf8');
 	const webview = document.querySelectorAll('webview');
 	for (var i = 0; i < webview.length; i++) {
