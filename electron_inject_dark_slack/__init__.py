@@ -9,16 +9,31 @@ import json
 import socket
 import subprocess
 import time
+import string
 
 SCRIPT_HOTKEYS_F12_DEVTOOLS_F5_REFRESH = """document.addEventListener("keydown", function (e) {
     if (e.which === 123) {
         //F12
+		console.log("test");
         require("electron").remote.BrowserWindow.getFocusedWindow().webContents.toggleDevTools();
     } else if (e.which === 116) {
         //F5
         location.reload();
     }
 });"""
+
+SCRIPT_ENABLE_DARK_THEME_SLACK = """
+	var cssPath = '""" + string.replace(string.replace(__file__, '\\', '/'), '__init__.py', 'dark.css') + """';
+	var css = require("fs").readFileSync(cssPath,'utf8');
+	const webview = document.querySelectorAll('webview');
+	for (var i = 0; i < webview.length; i++) {
+		webview[i].insertCSS(css);
+		//webview[i].openDevTools();
+	}
+	
+"""
+
+
 
 
 class LazyWebsocket(object):
@@ -93,8 +108,8 @@ class ElectronRemoteDebugger(object):
         ret = json.loads(w['ws'].sendrcv(json.dumps(data)))
         if "result" not in ret:
             return ret
-        if ret['result']['wasThrown']:
-            raise Exception(ret['result']['result'])
+        #if ret['result']['wasThrown']:
+        #    raise Exception(ret['result']['result'])
         return ret['result']
 
     @classmethod
@@ -119,7 +134,4 @@ class ElectronRemoteDebugger(object):
         return cls("localhost", port=port)
 
 
-if __name__ == "__main__":
-    erb = ElectronRemoteDebugger("localhost", 8888)
-    for w in erb.windows():
-        print erb.eval(w, SCRIPT_HOTKEYS_F12_DEVTOOLS_F5_REFRESH)
+
