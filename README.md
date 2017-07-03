@@ -9,22 +9,17 @@ Dark CSS for Slack created by https://github.com/Bigsy/dark-slack-theme (Modifie
 
 # install
 
-	$ pip install electron-inject
-	
-	or
-
     $ python setup.py install
-	
     
 # usage
 
-    $ python -m electron-inject-slack-css --help
+    $ python -m electron_inject_dark_slack --help
     Usage:
         usage:
-               electron-inject-slack-css [options] - <electron application>
+               electron_inject_dark_slack [options] - <electron application>
 
         example:
-               electron-inject-slack-css --enable-dev-tool-hotkey - /path/to/electron/powered/application [--app-params app-args]
+               electron_inject_dark_slack --enable-dev-tool-hotkey - /path/to/Slack [--app-params app-args]
 
 
     Options:
