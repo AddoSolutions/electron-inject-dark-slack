@@ -11,7 +11,7 @@ def read(fname):
         return "Not available"
 setup(
     name="electron-inject-dark-slack",
-    version="0.3",
+    version="0.3.7",
     packages=["electron_inject_dark_slack"],
     author="KemonoServal",
     author_email="wrdqex@gmail.com",
@@ -24,8 +24,9 @@ setup(
     #python setup.py register -r https://testpypi.python.org/pypi
     long_description=read("README.rst") if os.path.isfile("README.rst") else read("README.md"),
     install_requires=['websocket-client','requests'],
+	package_dir={'electron_inject_dark_slack': 'electron_inject_dark_slack'},
     package_data={
-                  'electron_inject_dark_slack': ['electron_inject_dark_slack'],
+                  'electron_inject_dark_slack': ['electron_inject_dark_slack']
                   },
-	include_package_data=True,
+	include_package_data=True
 )

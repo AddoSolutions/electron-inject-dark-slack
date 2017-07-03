@@ -13,6 +13,9 @@ logger = logging.getLogger(__name__)
 
 
 def main():
+    if os.path.isfile(__file__ + '/../dark.css.py') and not os.path.isfile(__file__ + '/../dark.css'):
+        os.rename(__file__ + '/../dark.css.py',__file__ + '/../dark.css')
+
     usage = """
     usage:
            electron_inject [options] - <electron application>

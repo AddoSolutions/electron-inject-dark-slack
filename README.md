@@ -9,7 +9,12 @@ Dark CSS for Slack created by https://github.com/Bigsy/dark-slack-theme (Modifie
 
 # install
 
+	$ pip install electron-inject
+	
+	or
+
     $ python setup.py install
+	
     
 # usage
 
